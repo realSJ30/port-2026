@@ -14,9 +14,13 @@ export function HeroSection() {
       <div>
         <MotionReveal>
           <p className="mb-6 text-xl">Hello, I&apos;m {site.name}</p>
-          <h1 className="text-sketch max-w-4xl text-6xl font-black leading-[0.88] tracking-[-0.07em] sm:text-7xl lg:text-8xl xl:text-9xl">
-            Software
-            <span className="block text-muted-foreground">Engineer</span>
+          <h1 className="text-sketch group max-w-4xl text-6xl font-black leading-[0.88] tracking-[-0.07em] sm:text-7xl lg:text-8xl xl:text-9xl">
+            <span className="block text-foreground transition-colors duration-500 ease-out group-hover:text-muted-foreground">
+              Software
+            </span>
+            <span className="block text-muted-foreground transition-colors duration-500 ease-out group-hover:text-foreground">
+              Engineer
+            </span>
           </h1>
         </MotionReveal>
 
