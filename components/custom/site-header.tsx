@@ -8,7 +8,7 @@ import { site } from "@/utils/constants/site";
 export function SiteHeader() {
   return (
     <header className="etched-rule sticky top-0 z-50 border-b border-line bg-paper/95 backdrop-blur">
-      <div className="mx-auto flex min-h-20 max-w-7xl items-center justify-between gap-6 px-6 sm:px-10 lg:px-12">
+      <div className="relative mx-auto flex min-h-20 max-w-7xl items-center justify-between gap-6 px-6 sm:px-10 lg:px-12">
         <a
           href="#home"
           aria-label="Go to home section"
@@ -38,7 +38,7 @@ export function SiteHeader() {
           <ThemeToggle />
           <a
             href={`mailto:${site.email}`}
-            className="group inline-flex items-center gap-2 rounded-full border border-border px-5 py-3 text-sm font-semibold transition-colors hover:bg-foreground hover:text-background focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-foreground sm:text-base"
+            className="group hidden items-center gap-2 rounded-full border border-border px-5 py-3 text-sm font-semibold transition-colors hover:bg-foreground hover:text-background focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-foreground sm:text-base lg:inline-flex"
           >
             <span>Let&apos;s Talk</span>
             <Send

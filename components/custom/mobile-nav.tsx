@@ -1,9 +1,10 @@
 "use client";
 
-import { Menu, X } from "lucide-react";
+import { Menu, Send, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
 import { navigationItems } from "@/utils/constants/navigation";
+import { site } from "@/utils/constants/site";
 
 export function MobileNav() {
   const [open, setOpen] = useState(false);
@@ -18,12 +19,15 @@ export function MobileNav() {
   }, [open]);
 
   useEffect(() => {
+    if (!open) return;
     const previous = document.body.style.overflow;
-    document.body.style.overflow = open ? "hidden" : previous;
+    document.body.style.overflow = "hidden";
     return () => {
       document.body.style.overflow = previous;
     };
   }, [open]);
+
+  const close = () => setOpen(false);
 
   return (
     <>
@@ -33,7 +37,7 @@ export function MobileNav() {
         aria-expanded={open}
         aria-controls="mobile-nav-panel"
         onClick={() => setOpen((value) => !value)}
-        className="inline-flex size-11 items-center justify-center rounded-full border border-border transition-colors hover:bg-foreground hover:text-background focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-foreground lg:hidden"
+        className="relative z-50 inline-flex size-11 items-center justify-center rounded-full border border-border bg-background transition-colors hover:bg-foreground hover:text-background focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-foreground lg:hidden"
       >
         {open ? (
           <X aria-hidden="true" className="size-5" />
@@ -43,27 +47,42 @@ export function MobileNav() {
       </button>
 
       {open ? (
-        <div
-          id="mobile-nav-panel"
-          className="fixed inset-x-0 top-20 bottom-0 z-40 border-t border-line bg-paper/95 backdrop-blur lg:hidden"
-          onClick={() => setOpen(false)}
-        >
-          <nav
-            aria-label="Mobile navigation"
-            className="mx-auto flex max-w-7xl flex-col px-6 py-6 sm:px-10"
+        <>
+          <button
+            type="button"
+            aria-label="Close menu"
+            onClick={close}
+            className="fixed inset-0 z-30 cursor-default bg-foreground/30 backdrop-blur-sm lg:hidden"
+          />
+          <div
+            id="mobile-nav-panel"
+            className="absolute inset-x-0 top-full z-40 border-t border-border bg-background shadow-lg lg:hidden"
           >
-            {navigationItems.map((item) => (
+            <nav
+              aria-label="Mobile navigation"
+              className="mx-auto flex max-w-7xl flex-col px-6 py-4 sm:px-10"
+            >
+              {navigationItems.map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  onClick={close}
+                  className="border-b border-line py-4 text-xl font-semibold tracking-tight transition-colors last:border-b-0 hover:text-muted-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-foreground"
+                >
+                  {item.label}
+                </a>
+              ))}
               <a
-                key={item.href}
-                href={item.href}
-                onClick={() => setOpen(false)}
-                className="border-b border-line py-5 text-2xl font-semibold tracking-tight transition-colors hover:text-muted-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-foreground"
+                href={`mailto:${site.email}`}
+                onClick={close}
+                className="mt-4 inline-flex items-center justify-center gap-2 rounded-full border border-border px-5 py-3 text-base font-semibold transition-colors hover:bg-foreground hover:text-background focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-foreground"
               >
-                {item.label}
+                <span>Let&apos;s Talk</span>
+                <Send aria-hidden="true" className="size-4" />
               </a>
-            ))}
-          </nav>
-        </div>
+            </nav>
+          </div>
+        </>
       ) : null}
     </>
   );
