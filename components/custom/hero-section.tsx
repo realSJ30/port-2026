@@ -50,7 +50,7 @@ export function HeroSection() {
 
       <MotionReveal
         transition={{ delay: 0.18 }}
-        className="sketch-panel relative min-h-80 border border-transparent p-10"
+        className="etched-rule sketch-panel relative min-h-80 border border-transparent p-10"
       >
         <div className="absolute right-12 top-12 h-28 border-l border-border" />
         <div className="absolute right-[4.6rem] top-11 size-2 rounded-full bg-foreground" />

@@ -6,7 +6,7 @@ import { site } from "@/utils/constants/site";
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-paper/95 backdrop-blur">
+    <header className="etched-rule sticky top-0 z-50 border-b border-line bg-paper/95 backdrop-blur">
       <div className="mx-auto flex min-h-20 max-w-7xl items-center justify-between gap-6 px-6 sm:px-10 lg:px-12">
         <a
           href="#home"

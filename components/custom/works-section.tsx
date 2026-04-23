@@ -12,7 +12,7 @@ function ProjectPreview({ project }: { project: Project }) {
   const hasMobile = Boolean(project.images.mobile);
 
   return (
-    <div className="sketch-panel relative min-h-72 overflow-hidden border border-border bg-paper p-5 transition-transform duration-300 group-hover:-translate-y-1 sm:min-h-80 lg:min-h-[23rem]">
+    <div className="etched-rule sketch-panel relative min-h-72 overflow-hidden border border-border bg-paper p-5 transition-transform duration-300 group-hover:-translate-y-1 sm:min-h-80 lg:min-h-[23rem]">
       {hasDesktop ? (
         <div className="relative z-10">
           <div className="flex h-8 items-center gap-2 border border-border border-b-0 bg-paper px-4">

@@ -7,7 +7,7 @@ import { WorksSection } from "@/components/custom/works-section";
 
 export default function Home() {
   return (
-    <div className="mx-auto min-h-screen max-w-7xl border-x border-border bg-paper">
+    <div className="etched-page mx-auto min-h-screen max-w-7xl border-x border-line bg-paper">
       <SiteHeader />
       <main>
         <HeroSection />

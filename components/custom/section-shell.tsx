@@ -11,7 +11,7 @@ export function SectionShell({ children, className, id }: SectionShellProps) {
     <section
       id={id}
       className={cn(
-        "border-b border-border px-6 py-12 sm:px-10 lg:px-16 lg:py-16",
+        "etched-section border-b border-line px-6 py-12 sm:px-10 lg:px-16 lg:py-16",
         className,
       )}
     >

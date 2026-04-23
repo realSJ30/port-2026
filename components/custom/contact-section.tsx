@@ -61,7 +61,7 @@ export function ContactSection() {
         </div>
       </SectionShell>
 
-      <div className="sketch-panel border-t border-border px-6 py-5 text-center font-mono text-xs text-foreground/80 sm:px-10">
+      <div className="sketch-panel border-t border-line px-6 py-5 text-center font-mono text-xs text-foreground/80 sm:px-10">
         © 2026 {site.wordmark} All rights reserved.
       </div>
     </footer>
