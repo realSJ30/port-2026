@@ -1,5 +1,6 @@
 import { Send } from "lucide-react";
 
+import { ThemeToggle } from "@/components/custom/theme-toggle";
 import { navigationItems } from "@/utils/constants/navigation";
 import { site } from "@/utils/constants/site";
 
@@ -31,16 +32,19 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <a
-          href={`mailto:${site.email}`}
-          className="group inline-flex items-center gap-2 rounded-full border border-border px-5 py-3 text-sm font-semibold transition-colors hover:bg-foreground hover:text-background focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-foreground sm:text-base"
-        >
-          <span>Let&apos;s Talk</span>
-          <Send
-            aria-hidden="true"
-            className="size-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-          />
-        </a>
+        <div className="flex items-center gap-3">
+          <ThemeToggle />
+          <a
+            href={`mailto:${site.email}`}
+            className="group inline-flex items-center gap-2 rounded-full border border-border px-5 py-3 text-sm font-semibold transition-colors hover:bg-foreground hover:text-background focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-foreground sm:text-base"
+          >
+            <span>Let&apos;s Talk</span>
+            <Send
+              aria-hidden="true"
+              className="size-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+            />
+          </a>
+        </div>
       </div>
     </header>
   );
