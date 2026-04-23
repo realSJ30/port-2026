@@ -97,6 +97,15 @@ export function WorksSection() {
                     {tool}
                   </Badge>
                 ))}
+                {project.tools.length > 3 ? (
+                  <Badge
+                    variant="outline"
+                    className="rounded-none border-border bg-transparent font-mono text-[10px] uppercase tracking-wide text-muted-foreground"
+                    title={project.tools.slice(3).join(", ")}
+                  >
+                    +{project.tools.length - 3} more
+                  </Badge>
+                ) : null}
               </div>
               <div className="mt-4 flex gap-4 text-sm font-semibold">
                 {project.site !== "#" ? (

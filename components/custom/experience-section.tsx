@@ -16,7 +16,7 @@ export function ExperienceSection() {
           <MotionReveal
             key={`${experience.company}-${experience.duration}`}
             transition={{ delay: Math.min(index * 0.04, 0.22) }}
-            className="grid grid-cols-[18px_1fr] gap-x-5 pb-8 last:pb-0 md:grid-cols-[18px_160px_1fr] md:gap-x-10"
+            className="grid grid-cols-[18px_1fr] gap-x-5 pb-8 last:pb-0 lg:grid-cols-[18px_190px_1fr] lg:gap-x-10"
           >
             <div className="relative flex justify-center">
               <span className="mt-1.5 size-4 rounded-full border border-border bg-paper" />
@@ -27,7 +27,7 @@ export function ExperienceSection() {
             <div className="font-mono text-sm text-foreground/75">
               {experience.duration}
             </div>
-            <article className="col-start-2 mt-4 md:col-start-auto md:mt-0">
+            <article className="col-start-2 mt-3 lg:col-start-auto lg:mt-0">
               <h3 className="text-xl font-semibold">{experience.position}</h3>
               <p className="mt-1 text-sm text-muted-foreground">
                 {experience.company}

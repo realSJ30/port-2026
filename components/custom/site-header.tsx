@@ -1,5 +1,6 @@
 import { Send } from "lucide-react";
 
+import { MobileNav } from "@/components/custom/mobile-nav";
 import { ThemeToggle } from "@/components/custom/theme-toggle";
 import { navigationItems } from "@/utils/constants/navigation";
 import { site } from "@/utils/constants/site";
@@ -33,6 +34,7 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-3">
+          <MobileNav />
           <ThemeToggle />
           <a
             href={`mailto:${site.email}`}

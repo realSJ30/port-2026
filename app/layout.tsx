@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Geist } from "next/font/google";
+import Script from "next/script";
 import { cn } from "@/lib/utils";
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
   title: "Seth Joshua Moraga | Software Engineer",
@@ -14,21 +15,21 @@ export const metadata: Metadata = {
   },
 };
 
+const themeScript = `
+try {
+  const storedTheme = localStorage.getItem("theme");
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const theme = storedTheme || (prefersDark ? "dark" : "light");
+  document.documentElement.classList.toggle("dark", theme === "dark");
+  document.documentElement.style.colorScheme = theme;
+} catch (_) {}
+`;
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const themeScript = `
-    try {
-      const storedTheme = localStorage.getItem("theme");
-      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      const theme = storedTheme || (prefersDark ? "dark" : "light");
-      document.documentElement.classList.toggle("dark", theme === "dark");
-      document.documentElement.style.colorScheme = theme;
-    } catch (_) {}
-  `;
-
   return (
     <html
       lang="en"
@@ -43,7 +44,11 @@ export default function RootLayout({
         suppressHydrationWarning
         className="min-h-full bg-background text-foreground"
       >
-        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        <Script
+          id="theme-init"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{ __html: themeScript }}
+        />
         {children}
       </body>
     </html>
