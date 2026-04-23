@@ -50,18 +50,16 @@ export function HeroSection() {
 
       <MotionReveal
         transition={{ delay: 0.18 }}
-        className="etched-rule sketch-panel relative min-h-80 border border-transparent p-10"
+        className="flex min-h-80 flex-col justify-center pt-12 lg:items-end lg:pt-20"
       >
-        <div className="absolute right-12 top-12 h-28 border-l border-border" />
-        <div className="absolute right-[4.6rem] top-11 size-2 rounded-full bg-foreground" />
-        <ul className="ml-auto mt-16 flex max-w-xs flex-col gap-5 text-right font-mono text-sm uppercase tracking-wide">
+        <ul className="flex max-w-xs flex-col gap-5 text-right font-mono text-sm uppercase tracking-wide">
           {site.services.map((service) => (
             <li key={service}>{service}</li>
           ))}
         </ul>
         <a
           href="#contact"
-          className="group absolute bottom-8 right-10 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.2em]"
+          className="group mt-16 inline-flex items-center justify-end gap-2 self-end text-sm font-semibold uppercase tracking-[0.2em]"
         >
           Talk
           <ArrowUpRight
