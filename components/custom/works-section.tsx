@@ -1,4 +1,5 @@
 import { ArrowUpRight, Code2 } from "lucide-react";
+import Image from "next/image";
 
 import { MotionReveal } from "@/components/custom/motion-reveal";
 import { SectionShell } from "@/components/custom/section-shell";
@@ -6,30 +7,46 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { projects, type Project } from "@/utils/constants/projects";
 
-function ProjectPreview({ project }: { project: Project }) {
+const isAnimated = (src: string) => /\.gif($|\?)/i.test(src);
+
+function ProjectPreview({
+  project,
+  eager,
+}: {
+  project: Project;
+  eager: boolean;
+}) {
   const primaryImage = project.images.desktop ?? project.images.mobile;
   const hasDesktop = Boolean(project.images.desktop);
   const hasMobile = Boolean(project.images.mobile);
+  const loadingProps = eager
+    ? ({ priority: true, fetchPriority: "high" } as const)
+    : ({ loading: "lazy" as const });
 
   return (
     <div className="etched-rule sketch-panel relative min-h-72 overflow-hidden border border-border bg-paper p-5 transition-transform duration-300 group-hover:-translate-y-1 sm:min-h-80 lg:min-h-[23rem]">
-      {hasDesktop ? (
+      {hasDesktop && project.images.desktop ? (
         <div className="relative z-10">
           <div className="flex h-8 items-center gap-2 border border-border border-b-0 bg-paper px-4">
             <span className="size-2 rounded-full bg-foreground" />
             <span className="size-2 rounded-full border border-border" />
             <span className="size-2 rounded-full border border-border" />
           </div>
-          <div
-            className="h-52 border border-border bg-cover bg-top sm:h-60 lg:h-72"
-            style={{ backgroundImage: `url("${project.images.desktop}")` }}
-            role="img"
-            aria-label={`${project.title} desktop preview`}
-          />
+          <div className="relative h-52 border border-border sm:h-60 lg:h-72">
+            <Image
+              src={project.images.desktop}
+              alt={`${project.title} desktop preview`}
+              fill
+              sizes="(min-width: 1024px) 45vw, (min-width: 640px) 90vw, 100vw"
+              className="object-cover object-top"
+              unoptimized={isAnimated(project.images.desktop)}
+              {...loadingProps}
+            />
+          </div>
         </div>
       ) : null}
 
-      {hasMobile ? (
+      {hasMobile && project.images.mobile ? (
         <div
           className={
             hasDesktop
@@ -41,13 +58,20 @@ function ProjectPreview({ project }: { project: Project }) {
           <div
             className={
               hasDesktop
-                ? "h-44 bg-cover bg-top sm:h-52"
-                : "min-h-0 flex-1 bg-cover bg-top"
+                ? "relative h-44 sm:h-52"
+                : "relative min-h-0 flex-1"
             }
-            style={{ backgroundImage: `url("${project.images.mobile}")` }}
-            role="img"
-            aria-label={`${project.title} mobile preview`}
-          />
+          >
+            <Image
+              src={project.images.mobile}
+              alt={`${project.title} mobile preview`}
+              fill
+              sizes={hasDesktop ? "128px" : "(min-width: 640px) 256px, 224px"}
+              className="object-cover object-top"
+              unoptimized={isAnimated(project.images.mobile)}
+              {...loadingProps}
+            />
+          </div>
         </div>
       ) : null}
 
@@ -76,7 +100,7 @@ export function WorksSection() {
             transition={{ delay: Math.min(index * 0.03, 0.2) }}
             className="group"
           >
-            <ProjectPreview project={project} />
+            <ProjectPreview project={project} eager={index < 2} />
             <div className="mt-4">
               <div className="flex items-start justify-between gap-3">
                 <h3 className="text-lg font-semibold">{project.title}</h3>
