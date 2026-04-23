@@ -36,8 +36,8 @@ export function ContactSection() {
                 {site.email}
               </a>
               <p className="text-sm leading-6 text-muted-foreground">
-                Available for frontend, fullstack, mobile, and cloud-focused
-                product work.
+                Available for frontend, fullstack, mobile, AI automation, and
+                cloud-focused product work.
               </p>
             </div>
 
