@@ -2,7 +2,7 @@ export const skills = [
   {
     title: "Core",
     summary: "Product interfaces, APIs, mobile apps, and full-stack systems.",
-    items: ["React / ReactNative", "Next", "Nest JS", "Laravel", "Flutter", "Typescript", "GraphQL"],
+    items: ["React / ReactNative", "Next", "Node JS","Nest JS", "Typescript"],
   },
   {
     title: "CSS Frameworks",
@@ -20,7 +20,7 @@ export const skills = [
     items: ["AWS", "GCP", "Terraform", "Docker", "Jenkins"],
   },
   {
-    title: "Marketing & Auth",
+    title: "Marketing & Automation",
     summary: "Operational tooling around growth, automation, SEO, and access.",
     items: ["N8N Automation", "SEO", "Ads Manager"],
   },

@@ -16,13 +16,18 @@ export function ExperienceSection() {
           <MotionReveal
             key={`${experience.company}-${experience.duration}`}
             transition={{ delay: Math.min(index * 0.04, 0.22) }}
-            className="grid gap-5 border-l border-border pb-8 pl-8 last:pb-0 md:grid-cols-[160px_1fr] md:gap-12"
+            className="grid grid-cols-[18px_1fr] gap-x-5 pb-8 last:pb-0 md:grid-cols-[18px_160px_1fr] md:gap-x-10"
           >
-            <div className="relative font-mono text-sm text-foreground/75">
-              <span className="absolute -left-[2.34rem] top-1 size-4 rounded-full border border-border bg-paper" />
+            <div className="relative flex justify-center">
+              <span className="mt-1.5 size-4 rounded-full border border-border bg-paper" />
+              {index < experiences.length - 1 ? (
+                <span className="absolute top-6 bottom-[-2rem] left-1/2 w-px -translate-x-1/2 bg-border" />
+              ) : null}
+            </div>
+            <div className="font-mono text-sm text-foreground/75">
               {experience.duration}
             </div>
-            <article>
+            <article className="col-start-2 mt-4 md:col-start-auto md:mt-0">
               <h3 className="text-xl font-semibold">{experience.position}</h3>
               <p className="mt-1 text-sm text-muted-foreground">
                 {experience.company}
