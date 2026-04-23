@@ -24,17 +24,6 @@ export const projects: Project[] = [
     github: "https://github.com/realSJ30/hub",
     type: "web",
   },
-  {
-    title: "PlayPath",
-    description: "Marketplace experience for buying and selling trading card game products.",
-    tools: ["Next", "Auth JS", "Tailwind", "ShadCN", "Go"],
-    images: {
-      mobile: "https://ik.imagekit.io/wny2krzo1/portfolio-assets/www.playpath.com_(iPhone%2014%20Pro%20Max)%20(1).png?updatedAt=1726539538904",
-    },
-    site: "https://playpath.com",
-    github: "#",
-    type: "web",
-  },
   // {
   //   title: "Play",
   //   description: "Modern web application built with Next, Tailwind, and Supabase.",
@@ -54,6 +43,41 @@ export const projects: Project[] = [
     },
     site: "https://renta-kappa.vercel.app/",
     github: "https://github.com/realSJ30/renta",
+    type: "web",
+  },
+  {
+    title: "Foodmood",
+    description: "Choose your favourite food recipes with Foodmood.",
+    tools: ["React", "Tailwind", "Spoon Api"],
+    images: {
+      desktop: "/assets/works/foodmood-desktop.png",
+      mobile: "/assets/works/foodmood-desktop-2.png",
+    },
+    site: "https://foodmood-seven.vercel.app",
+    github: "https://github.com/realSJ30/foodmood",
+    type: "web",
+  },
+  {
+    title: "Ecommerce",
+    description: "Shop everything you need, hassle-free.",
+    tools: ["Next", "Tailwind", "Prisma", "Shadcn"],
+    images: {
+      desktop: "/assets/works/ecommerce-client-desktop.png",
+      mobile: "/assets/works/ecommerce-client-mobile.png",
+    },
+    site: "https://ecom-client-lake.vercel.app/",
+    github: "https://github.com/realSJ30/ecom-client",
+    type: "web",
+  },
+  {
+    title: "PlayPath",
+    description: "Marketplace experience for buying and selling trading card game products.",
+    tools: ["Next", "Auth JS", "Tailwind", "ShadCN", "Go"],
+    images: {
+      mobile: "https://ik.imagekit.io/wny2krzo1/portfolio-assets/www.playpath.com_(iPhone%2014%20Pro%20Max)%20(1).png?updatedAt=1726539538904",
+    },
+    site: "https://playpath.com",
+    github: "#",
     type: "web",
   },
   {
@@ -89,18 +113,6 @@ export const projects: Project[] = [
     type: "web",
   },
   {
-    title: "Ecommerce",
-    description: "Shop everything you need, hassle-free.",
-    tools: ["Next", "Tailwind", "Prisma", "Shadcn"],
-    images: {
-      desktop: "/assets/works/ecommerce-client-desktop.png",
-      mobile: "/assets/works/ecommerce-client-mobile.png",
-    },
-    site: "https://ecom-client-lake.vercel.app/",
-    github: "https://github.com/realSJ30/ecom-client",
-    type: "web",
-  },
-  {
     title: "TrekUp",
     description: "Explore the mountains with TrekUp.",
     tools: ["React Native", "Mapbox"],
@@ -121,18 +133,6 @@ export const projects: Project[] = [
     },
     site: "https://cafechaa.vercel.app",
     github: "https://github.com/realSJ30/cafechaa",
-    type: "web",
-  },
-  {
-    title: "Foodmood",
-    description: "Choose your favourite food recipes with Foodmood.",
-    tools: ["React", "Tailwind", "Spoon Api"],
-    images: {
-      desktop: "/assets/works/foodmood-desktop.png",
-      mobile: "/assets/works/foodmood-desktop-2.png",
-    },
-    site: "https://foodmood-seven.vercel.app",
-    github: "https://github.com/realSJ30/foodmood",
     type: "web",
   },
   {
