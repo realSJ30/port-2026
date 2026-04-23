@@ -33,8 +33,8 @@ function ProjectPreview({ project }: { project: Project }) {
         <div
           className={
             hasDesktop
-              ? "absolute bottom-5 right-5 z-20 w-28 rotate-2 border-2 border-border bg-paper p-1.5 shadow-[6px_6px_0_#141414] transition-transform duration-300 group-hover:rotate-0 sm:w-32"
-              : "absolute inset-x-0 top-5 mx-auto flex h-[calc(100%-2.5rem)] max-w-[14rem] flex-col border-2 border-border bg-paper p-1.5 shadow-[6px_6px_0_#141414] sm:max-w-[16rem]"
+              ? "absolute bottom-5 right-5 z-20 w-28 rotate-2 border-2 border-border bg-paper p-1.5 shadow-[6px_6px_0_var(--foreground)] transition-transform duration-300 group-hover:rotate-0 sm:w-32"
+              : "absolute inset-x-0 top-5 mx-auto flex h-[calc(100%-2.5rem)] max-w-[14rem] flex-col border-2 border-border bg-paper p-1.5 shadow-[6px_6px_0_var(--foreground)] sm:max-w-[16rem]"
           }
         >
           <div className="mx-auto mb-1.5 h-1.5 w-8 rounded-full bg-foreground" />

@@ -22,7 +22,7 @@ export const site = {
     },
     {
       label: "LinkedIn",
-      href: "www.linkedin.com/in/seth-moraga-01893b2b5",
+      href: "https://www.linkedin.com/in/seth-moraga-01893b2b5",
     },
     {
       label: "Facebook",
