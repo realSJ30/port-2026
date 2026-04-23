@@ -1,17 +1,18 @@
 export const site = {
-  name: "Seth Joshua Moraga",
+  name: "Seth",
   shortName: "SJ",
   wordmark: "sethjoshua.",
   role: "Software Engineer",
   email: "josh.moraga@gmail.com",
   resumePath: "/assets/resume.pdf",
-  headline: "Simplifying challenges, one line of code at a time.",
+  headline: "Software Engineer",
   intro:
-    "Real-world solutions delivered through clean, efficient, and modern engineering. I build thoughtful web, mobile, and cloud experiences that help products move faster.",
+    "This is my workspace where I showcase my work, experience, and continuous journey of building and learning...",
   services: [
     "Fullstack Development",
     "Frontend Engineering",
     "Cloud & DevOps",
+    "AI Automation",
     "Mobile Apps",
   ],
   socials: [

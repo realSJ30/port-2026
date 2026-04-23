@@ -6,8 +6,6 @@ import { Button } from "@/components/ui/button";
 import { site } from "@/utils/constants/site";
 
 export function HeroSection() {
-  const [headlineStart, headlineRest] = site.headline.split(",");
-
   return (
     <SectionShell
       id="home"
@@ -15,12 +13,10 @@ export function HeroSection() {
     >
       <div>
         <MotionReveal>
-          <p className="mb-6 text-xl">Hello, I&apos;m</p>
+          <p className="mb-6 text-xl">Hello, I&apos;m {site.name}</p>
           <h1 className="text-sketch max-w-4xl text-6xl font-black leading-[0.88] tracking-[-0.07em] sm:text-7xl lg:text-8xl xl:text-9xl">
-            {headlineStart},
-            <span className="block text-muted-foreground">
-              {headlineRest.trim()}
-            </span>
+            Software
+            <span className="block text-muted-foreground">Engineer</span>
           </h1>
         </MotionReveal>
 
